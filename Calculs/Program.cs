@@ -27,12 +27,18 @@ namespace Calculs
                 Console.WriteLine("Quitter ........................ 0");
                 Console.Write("Choix :                          ");
                 choix = Console.ReadLine();
+
+                // MODIFICATION ICI : On génère les nombres UNE SEULE FOIS avant de tester le choix
+                // Cela évite de répéter ces lignes dans le case "1" et le case "2"
+                val1 = rand.Next(1, 10);
+                val2 = rand.Next(1, 10);
+
                 // traitement des choix
                 switch (choix)
                 {
                     case "1": // addition
-                        val1 = rand.Next(1, 10);
-                        val2 = rand.Next(1, 10);
+                              // Les lignes val1 et val2 ont été supprimées ici
+
                         // saisie de la réponse
                         correct = false;
                         while (!correct)
@@ -59,9 +65,10 @@ namespace Calculs
                             Console.WriteLine("Faux : " + val1 + " + " + val2 + " = " + solution);
                         }
                         break;
+
                     case "2": // multiplication
-                        val1 = rand.Next(1, 10);
-                        val2 = rand.Next(1, 10);
+                        // Les lignes val1 et val2 ont été supprimées ici aussi
+
                         // saisie de la réponse
                         correct = false;
                         while (!correct)
@@ -88,8 +95,10 @@ namespace Calculs
                             Console.WriteLine("Faux : " + val1 + " x " + val2 + " = " + solution);
                         }
                         break;
+
                     case "0": // demande de fin de programme
                         break;
+
                     default: // autre valeur donc erreur de saisie
                         Console.WriteLine("Erreur de saisie");
                         break;
